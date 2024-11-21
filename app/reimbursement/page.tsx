@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { FaRegEdit } from "react-icons/fa";
+
 type Reimbursements = {
   id: number
   tanggal: string
@@ -31,6 +34,7 @@ export default async function page () {
             <th>Status</th>
             <th>Tanggal Approval</th>
             <th>Approval By</th>
+            <th>Action</th>
           </tr> 
         </thead>
         <tbody>
@@ -43,6 +47,11 @@ export default async function page () {
               <td className="p-2">{reimbursement.status}</td>
               <td className="p-2">{reimbursement.tanggal_approval}</td>
               <td className="p-2">{reimbursement.approvalBy.name || "Belum Di Approve"}</td>
+              <td>
+                <Link href={`/reimbursement/${reimbursement.id}`}>
+                  <button className="bg-orange-500 text-white rounded-md py-2 px-4 hover:bg-orange-700"><FaRegEdit /></button>
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
