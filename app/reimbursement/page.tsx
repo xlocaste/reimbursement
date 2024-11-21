@@ -21,7 +21,7 @@ export default async function page () {
 
   return (
     <div className="p-10 w-full">
-      <table className="bg-gray-100 w-full rounded-3xl">
+      <table className="bg-gray-100 w-full border-2 rounded-2xl border-separate">
         <thead className="">
           <tr className="">
             <th className="p-4">Nama</th>
@@ -36,7 +36,7 @@ export default async function page () {
         <tbody>
           {reimbursements.map((reimbursement) => (
             <tr key={reimbursement.id} className="text-center">
-              <td className="p-2">{reimbursement.user.name}</td>
+              <td className="p-2">{reimbursement.user.name}</td>  
               <td className="p-2">{reimbursement.tanggal}</td>
               <td className="p-2">{reimbursement.deskripsi}</td>
               <td className="p-2">{reimbursement.jumlah}</td>
